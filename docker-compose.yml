@@ -1,0 +1,62 @@
+version: '3.6'
+
+x-build-args: &build_args
+  DEBIAN_FRONTEND: noninteractive
+  DEBCONF_NOWARNINGS: "yes"
+  # TIMEZONE: Etc/UTC
+  TIMEZONE: Asia/Shanghai
+  VERSION_GLPI: 9.4.5
+  LOCALEDEF_CHARMAP_FILE: UTF-8
+  # LOCALEDEF_INPUT_FILE: en_US
+  # LOCALEDEF_OUTPUT_PATH: /usr/lib/locale/en_US.utf8
+  LOCALEDEF_INPUT_FILE: zh_CN
+  LOCALEDEF_OUTPUT_PATH: /usr/lib/locale/zh_CN.UTF-8
+
+services:
+  glpi:
+    build:
+      context: .
+      target: production
+      args:
+        <<: *build_args
+    image: "glpi"
+    restart: always
+    container_name : glpi
+#    user: www-user
+    env_file: .env
+    ports:
+      - "80:80"
+    volumes:
+      - glpi-files:/var/www/html/glpi/files
+      - glpi-plugins:/var/www/html/glpi/plugins
+      - glpi-locales:/var/www/html/glpi/locales
+      - glpi-config:/var/www/html/glpi/config
+      - glpi-install:/var/www/html/glpi/install
+    depends_on: 
+      - mysql
+
+  
+
+  mysql:
+    image: mysql:5.7
+    container_name : mysql-glpi
+    ports:
+      - "3306:3306"
+    env_file: .mysql.env
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # - ./dump:/tmp/dump
+
+volumes: 
+  mysql-data:
+    driver: local
+  glpi-files:
+    driver: local
+  glpi-plugins:
+    driver: local
+  glpi-locales:
+    driver: local
+  glpi-config:
+    driver: local
+  glpi-install:
+    driver: local
