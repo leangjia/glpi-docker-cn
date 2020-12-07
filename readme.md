@@ -18,6 +18,12 @@
 * GLPI 官方网站: https://glpi-project.org/
 * GLPI 官方文档: https://glpi-install.readthedocs.io/en/latest/install/index.html
 * GLPI 稳定版: https://github.com/glpi-project/glpi/releases
+# GLPI全集DEMO演示在线体验
+* GLPI 经典版9.4.5: http://glpi.glpi-cn.com:8945
+* GLPI 普通版9.4.6: http://glpi.glpi-cn.com:8946
+* GLPI 改进版9.5.0: http://glpi.glpi-cn.com:8950
+* GLPI 升级版9.5.1: http://glpi.glpi-cn.com:8951
+* GLPI 最新版9.5.2: http://glpi.glpi-cn.com:8952
 
 
 
