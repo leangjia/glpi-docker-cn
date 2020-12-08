@@ -23,7 +23,8 @@
 * GLPI 普通版9.4.6: http://glpi.glpi-cn.com:8946
 * GLPI 改进版9.5.0: http://glpi.glpi-cn.com:8950
 * GLPI 升级版9.5.1: http://glpi.glpi-cn.com:8951
-* GLPI 最新版9.5.2: http://glpi.glpi-cn.com:8952
+* GLPI 不是最新版9.5.2: http://glpi.glpi-cn.com:8952
+* GLPI 最新版9.5.3: http://glpi.glpi-cn.com:8953
 
 
 
